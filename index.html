@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mita ♡</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: Atma, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .header {
+            width: 100%;
+            padding: 15px 0;
+            background: transparent;
+            text-align: center;
+        }
+        .header a {
+            margin: 0 15px;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s ease;
+        }
+        .header a:hover {
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 110px;
+            border: 3px solid palevioletred;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ff4081;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 10px;
+        }
+        .decorations {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: #ff4081;
+            border-radius: 50%;
+            top: 10%;
+            left: 20%;
+            opacity: 0.75;
+        }
+        .balloon:nth-child(2) {
+            left: 70%;
+            background: #ffcc00;
+        }
+        .balloon:nth-child(3) {
+            left: 50%;
+            background: #00c3ff;
+        }
+
+        .bottom-decor {
+            position: fixed;
+            bottom: 0;
+            width: 150px;
+            height: 150px;
+            opacity: 0.9;
+        }
+        .bottom-left {
+            left: 10px;
+            background: url('https://i.imgur.com/nP0e0WN.png') no-repeat center/contain;
+        }
+        .bottom-right {
+            right: 10px;
+            background: url('https://i.imgur.com/nP0e0WN.png') no-repeat center/contain;
+            transform: scaleX(-1);
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            opacity: 1.0;
+            animation: twinkle 1.5s infinite alternate ease-in-out;
+        }
+        .sparkle:nth-child(1) { left: 20px; bottom: 30px; animation-delay: 0.2s; }
+        .sparkle:nth-child(2) { left: 50px; bottom: 10px; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { left: 80px; bottom: 50px; animation-delay: 0.8s; }
+        .sparkle:nth-child(4) { left: 30px; bottom: 70px; animation-delay: 1.1s; }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.3); }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .header a {
+                font-size: 1rem;
+            }
+            .bottom-decor {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">Birthdayyy</a>
+        <a href="surprise.html">Surprise</a>
+        <a href="mitaanddaddy.html">Mita & Daddy</a>
+    </div>
+    <div class="decorations">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+    <div class="container">
+        <h1>Happy Birthday Mitaaa ♡</h1>
+        <p>It's my mita's birthdayy &lt;33333</p>
+    </div>
+    <div class="bottom-decor bottom-left">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+    <div class="bottom-decor bottom-right">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+</body>
+</html>
