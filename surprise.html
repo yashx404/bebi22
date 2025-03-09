@@ -16,11 +16,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh; /* Change from height: 100vh to min-height */
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #76f59c);
             font-family: Atma, sans-serif;
             text-align: center;
-            overflow-y: auto; /* Allow vertical scrolling */
         }
         .header {
             width: 100%;
@@ -104,6 +103,10 @@
         @media (max-width: 1200px) {
             .container{
                 max-width: 70%;
+            }
+            .image{
+                height: 90%;
+                width: 90%;
             }
         }
     </style>
