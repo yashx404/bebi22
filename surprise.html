@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="icon" href="ico.png">
 <head>
+    <link rel="icon" href="ico.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mita ♡</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             display: flex;
             flex-direction: column;
@@ -21,12 +23,14 @@
             font-family: Atma, sans-serif;
             text-align: center;
         }
+
         .header {
             width: 100%;
             padding: 15px 0;
             background: transparent;
             text-align: center;
         }
+
         .header a {
             margin: 0 15px;
             font-size: 1.2rem;
@@ -34,16 +38,59 @@
             font-weight: normal;
             transition: color 0.3s ease;
         }
+
         .header a:hover {
             color: white;
         }
-        .image {
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap; /* Ensure everything stays in a row */
+            max-width: 90vw;
+            text-align: center;
             margin-top: 9vh;
+        }
+
+        .message {
+            width: 25%; /* Adjust width */
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .left-message {
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .right-message {
+            text-align: center;
+            margin-left: 20px;
+        }
+
+        .image {
             border: 5px solid black;
             border-radius: 1%;
             max-height: 80vh;
-            max-width: 90vw;
+            max-width: 70vw;
             object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .message {
+                width: 80%;
+                margin-bottom: 15px;
+            }
         }
 
         .decorations {
@@ -52,6 +99,7 @@
             height: 100%;
             pointer-events: none;
         }
+
         .balloon {
             position: absolute;
             width: 40px;
@@ -62,14 +110,32 @@
             left: 20%;
             opacity: 0.75;
         }
+
         .balloon:nth-child(2) {
             left: 78%;
             background: #ffcc00;
         }
+
         .balloon:nth-child(3) {
             left: 50%;
             background: #00c3ff;
         }
+
+        #audio-control {
+            margin-top: 15px;
+            padding: 8px 15px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.48);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #audio-control:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
         .bottom-decor {
             position: fixed;
             bottom: 0;
@@ -77,9 +143,11 @@
             height: 150px;
             opacity: 0.9;
         }
+
         .bottom-left {
             left: 10px;
         }
+
         .bottom-right {
             right: 10px;
             transform: scaleX(-1);
@@ -95,6 +163,7 @@
             opacity: 1.0;
             animation: twinkle 1.5s infinite alternate ease-in-out;
         }
+
         .sparkle:nth-child(1) { left: 20px; bottom: 30px; animation-delay: 0.2s; }
         .sparkle:nth-child(2) { left: 50px; bottom: 10px; animation-delay: 0.5s; }
         .sparkle:nth-child(3) { left: 80px; bottom: 50px; animation-delay: 0.8s; }
@@ -104,8 +173,9 @@
             0% { opacity: 0.5; transform: scale(1); }
             100% { opacity: 1; transform: scale(1.3); }
         }
+
         @media (max-width: 1200px) {
-            .container{
+            .container {
                 max-width: 70%;
             }
         }
@@ -117,25 +187,60 @@
         <a href="surprise.html">Surprise</a>
         <a href="mitaanddaddy.html">Mita & Daddy</a>
     </div>
+
     <div class="decorations">
         <div class="balloon"></div>
         <div class="balloon"></div>
         <div class="balloon"></div>
     </div>
-    <div>
+
+    <div class="content">
+        <div class="message left-message">
+            <p>♡<br>  
+            Here's a tiny little gift for my cutie princess that I made..</p>
+        </div>
+
         <img class="image" src="surprise.jpeg">
+
+        <div class="message right-message">
+            <audio id="bg-music">
+                <source src="birthday.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <button id="audio-control">▶</button>
+            <p>Play me</p>
+        </div>
     </div>
+    
     <div class="bottom-decor bottom-left">
         <div class="sparkle"></div>
         <div class="sparkle"></div>
         <div class="sparkle"></div>
         <div class="sparkle"></div>
     </div>
+
     <div class="bottom-decor bottom-right">
         <div class="sparkle"></div>
         <div class="sparkle"></div>
         <div class="sparkle"></div>
         <div class="sparkle"></div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('bg-music');
+            const audioControl = document.getElementById('audio-control');
+
+            audioControl.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    audioControl.textContent = "⏸";
+                } else {
+                    audio.pause();
+                    audioControl.textContent = "▶";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
